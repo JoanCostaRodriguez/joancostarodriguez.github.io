@@ -3,111 +3,768 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Webpage of Joan Costa Rodriguez, MSc Economics student at Barcelona School of Economics." />
-  <meta name="keywords" content="Joan Costa Rodriguez, Economics, BSE, Development, Urban Economics, Inequality" />
+  <title>Joan Costa Rodriguez — Economics Researcher</title>
+
+  <!-- SEO & Academic Discovery -->
+  <meta name="description" content="Joan Costa Rodriguez is an Economics researcher at Barcelona School of Economics. Research interests: Development Economics, Migration, Remittances, Inequality, Environmental Economics." />
+  <meta name="keywords" content="Joan Costa Rodriguez, Economics, BSE, Barcelona School of Economics, Development Economics, Migration Economics, Remittances, Urban Economics, Inequality, Environmental Economics, PhD candidate, research, Pompeu Fabra" />
   <meta name="author" content="Joan Costa Rodriguez" />
-  <title>Joan Costa Rodriguez</title>
-  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
-  <!-- Font Awesome -->
-  <link href="https://use.fontawesome.com/releases/v6.1.0/css/all.css" rel="stylesheet" />
+
+  <!-- Open Graph for link sharing -->
+  <meta property="og:title" content="Joan Costa Rodriguez — Economics Researcher" />
+  <meta property="og:description" content="MSc Economics at Barcelona School of Economics. Research on migration corridors, remittance frictions, and regional inequality." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Schema.org structured data for Google Scholar / academic search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Joan Costa Rodriguez",
+    "givenName": "Joan",
+    "familyName": "Costa Rodriguez",
+    "url": "",
+    "email": "joancostaro6@gmail.com",
+    "jobTitle": "MSc Economics Student",
+    "affiliation": {
+      "@type": "EducationalOrganization",
+      "name": "Barcelona School of Economics"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Pompeu Fabra University"
+    },
+    "knowsAbout": ["Development Economics", "Migration Economics", "Remittances", "Inequality", "Environmental Economics", "Urban Economics"],
+    "description": "Economics researcher specializing in migration, remittances, and regional inequality."
+  }
+  </script>
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" />
-  <!-- Bootstrap + Custom CSS -->
-  <link href="css/styles.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --paper: #faf8f4;
+      --cream: #f3efe8;
+      --accent: #8b2500;
+      --accent-light: #c4553a;
+      --accent-subtle: rgba(139, 37, 0, 0.08);
+      --muted: #6b6560;
+      --border: #ddd6cc;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+      --max-w: 820px;
+      --side-pad: clamp(1.5rem, 5vw, 4rem);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; font-size: 17px; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.72;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(250, 248, 244, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .nav-name {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--ink);
+      margin: 5px 0;
+      transition: 0.3s;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 10rem var(--side-pad) 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-text h1 span {
+      color: var(--accent);
+    }
+
+    .hero-affiliation {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 1.8rem;
+      letter-spacing: 0.01em;
+    }
+    .hero-affiliation a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .hero-affiliation a:hover { border-bottom-color: var(--accent); }
+
+    .hero-bio {
+      font-size: 1.02rem;
+      line-height: 1.78;
+      color: #444;
+      max-width: 520px;
+    }
+    .hero-bio a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent-light);
+    }
+
+    .hero-fields {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.8rem;
+    }
+    .field-tag {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0.35rem 0.85rem;
+      background: var(--accent-subtle);
+      color: var(--accent);
+      border-radius: 100px;
+      text-transform: uppercase;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .hero-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 0.55rem 1.2rem;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .hero-links a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-subtle);
+    }
+    .hero-links a.primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .hero-links a.primary:hover {
+      background: #6e1e00;
+      border-color: #6e1e00;
+    }
+
+    .hero-photo {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .hero-photo img {
+      width: 300px;
+      height: 360px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 12px;
+      filter: grayscale(15%);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+
+    /* ── SECTION LAYOUT ── */
+    section {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 5rem var(--side-pad);
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    section > h2 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 2.5rem;
+      color: var(--ink);
+    }
+
+    .divider {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--side-pad);
+    }
+    .divider hr {
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── RESEARCH CARDS ── */
+    .paper-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2rem 2.2rem;
+      margin-bottom: 1.8rem;
+      transition: box-shadow 0.25s, border-color 0.25s;
+      position: relative;
+    }
+    .paper-card:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      border-color: var(--accent-light);
+    }
+
+    .paper-status {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.25rem 0.7rem;
+      border-radius: 4px;
+      margin-bottom: 0.8rem;
+    }
+    .status-wp {
+      background: #e8f0e4;
+      color: #2d5f1e;
+    }
+    .status-progress {
+      background: #fff3e0;
+      color: #b36b00;
+    }
+    .status-proposal {
+      background: #e8eaf6;
+      color: #3949ab;
+    }
+
+    .paper-card h3 {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--ink);
+      margin-bottom: 0.8rem;
+    }
+    .paper-card h3 a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .paper-card h3 a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .paper-meta {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .paper-abstract {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .paper-keywords {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .kw {
+      font-size: 0.7rem;
+      font-weight: 500;
+      font-family: var(--mono);
+      padding: 0.2rem 0.55rem;
+      background: var(--cream);
+      border-radius: 3px;
+      color: var(--muted);
+    }
+
+    .paper-links {
+      margin-top: 1.2rem;
+      display: flex;
+      gap: 0.8rem;
+    }
+    .paper-links a {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: opacity 0.2s;
+    }
+    .paper-links a:hover { opacity: 0.7; }
+    .paper-links a::before {
+      content: '↓';
+      font-size: 0.9rem;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .edu-item:last-child { border-bottom: none; }
+
+    .edu-item h3 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .edu-item .edu-school {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+    .edu-item .edu-school a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .edu-item .edu-detail {
+      font-size: 0.88rem;
+      color: #666;
+      margin-top: 0.3rem;
+    }
+    .edu-year {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .contact-item {
+      padding: 1.5rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .contact-item .label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+    .contact-item a {
+      font-size: 0.95rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-item p {
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 3rem var(--side-pad) 2rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.7s ease forwards;
+    }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.35s; }
+    .delay-4 { animation-delay: 0.5s; }
+    .delay-5 { animation-delay: 0.65s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      html { font-size: 16px; }
+
+      .hero { padding: 7rem var(--side-pad) 3rem; }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .hero-photo {
+        order: -1;
+        justify-content: center;
+      }
+      .hero-photo img {
+        width: 200px;
+        height: 240px;
+      }
+      .hero-text { text-align: left; }
+      .hero-links { flex-wrap: wrap; }
+
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        background: var(--paper);
+        padding: 1.5rem var(--side-pad);
+        border-bottom: 1px solid var(--border);
+        gap: 1rem;
+      }
+      .nav-toggle { display: block; }
+
+      .contact-grid { grid-template-columns: 1fr; }
+      .edu-item { grid-template-columns: 1fr; }
+      .edu-year { order: -1; }
+    }
+  </style>
 </head>
 
-<body id="page-top">
-  <!-- Sidebar Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">
-      <span class="d-block d-lg-none">Joan Costa Rodriguez</span>
-      <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="Profile" />
-      </span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#research">Research Experience</a></li>
-      </ul>
+<body>
+  <!-- Navigation -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-name">Joan Costa Rodriguez</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
-  <!-- Main Container -->
-  <div class="container-fluid p-0">
-    <!-- About Section -->
-    <section class="resume-section" id="about">
-      <div class="resume-section-content">
-        <h1 class="mb-0">
-          Joan <span class="text-primary">Costa Rodriguez</span>
-        </h1>
-        <div class="subheading mb-5">
-          Barcelona, Spain ·
-          <a class="link-primary" href="mailto:joancostaro6@gmail.com">joancostaro6@gmail.com</a>
-        </div>
-        <span class="d-block d-lg-none">
-          <img alt="Profile" class="img-fluid img-profile rounded-circle mx-auto mb-5" src="assets/img/profile.jpg"/>
-        </span>
-        <p class="lead mb-5">
-          I am a student of the MSc in Economics at <a class="link-primary" href="https://bse.eu"><u>Barcelona School of Economics</u></a>,
-          with strong interests in Development Economics, Inequality and Environmental Economics.
-          <br><br>
-          I received my BSc in Economics from <a class="link-primary" href="https://www.upf.edu/en/"><u>Pompeu Fabra University</u></a>,
-          graduating in the top 6% of the class and completing the <a class="link-primary" href="https://www.upf.edu/web/econ/programa-mqa"><u>Advanced Quantitative Methods Program</u></a>.
+  <!-- Hero / About -->
+  <header class="hero" id="about">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <h1 class="fade-in">Joan <span>Costa Rodriguez</span></h1>
+        <p class="hero-affiliation fade-in delay-1">
+          MSc Economics · <a href="https://bse.eu" target="_blank">Barcelona School of Economics</a>
         </p>
-        <div class="social-icons">
-          <a class="social-icon" href="CV_Master.pdf" class="link-primarynounderline">CV</a>
+        <p class="hero-bio fade-in delay-2">
+          I study how frictions shape migration and remittance decisions. My current research examines how conflict reshapes irregular migration corridors in East Africa and how transfer costs affect whether and how much migrants remit. I am broadly interested in Development Economics, Migration, Inequality, and Environmental Economics.
+        </p>
+        <div class="hero-fields fade-in delay-3">
+          <span class="field-tag">Development Economics</span>
+          <span class="field-tag">Migration</span>
+          <span class="field-tag">Remittances</span>
+          <span class="field-tag">Inequality</span>
+          <span class="field-tag">Environmental Economics</span>
         </div>
-
+        <div class="hero-links fade-in delay-4">
+          <a class="primary" href="CV_Master.pdf">Curriculum Vitae</a>
+          <a href="mailto:joancostaro6@gmail.com">Email</a>
+        </div>
       </div>
-    </section>
-    <hr class="m-0" />
-
-    <!-- Research Section -->
-    <section class="resume-section" id="research">
-      <div class="resume-section-content">
-        <h2 class="mb-5">Research Experience</h2>
-
-        <!-- Paper 1 -->
-        <div class="row mb-4">
-          <div class="col-md-8 paper-content">
-            <h3 class="mb-0">
-             <a class="link-primary" href="Writing_Sample.pdf" target="_blank">
-        <u>Market Access and Regional Inequality: Evidence from Brazil’s Capital Relocation</u>
-      </a>
-            </h3>
-            <p>
-              <br><br>
-              This paper examines the impact of market access on regional inequality, using the relocation of Brazil’s capital to Brasília as a natural experiment. The capital’s relocation was followed by a substantial expansion of infrastructure, particularly highways, which reduced trade costs and enhanced market access throughout all the regions in the country. This study measures the effects of the increased market access across all Brazilian states, with particular attention to differences between rural and industrial regions. Market access and inequality indices are constructed using official data sources. The findings indicate that increases in market access are associated with an increase in regional inequality in industrial regions, while the effect is significantly attenuated in rural areas.
-            </p>
-          </div>
-        </div>
-
-        <!-- Paper 2 -->
-        <div class="row mb-4">
-          <div class="col-md-8 paper-content">
-            <h3 class="mb-0">
-              <a class="link-primary"><u>Ideology and Age: A Perspective Across Multiple Generations in Spain, the United Kingdom, and the United States</u></a>
-            </h3>
-            <p>
-              <br><br>
-              This study examines political trends across different generations in Spain, comparing them with the United Kingdom and the United States. Using data from the Centre for Sociological Research (CIS), the research explores the ideological evolution of various generations: Post‑War Children, Baby Boomers, Generation X, and Millennials. 
-              The study reveals an initial lean towards the left in younger generations, which tends to shift towards more conservative positions as they age. This shift is influenced by a complex interplay of social, political, and economic factors. The conclusions underscore the impact of historical events, economic circumstances, and social changes on generational political shifts. The study proposes hypotheses that explain the observed trends. The unique characteristics of the Spanish political landscape, which include a wide range of parties and a robust welfare state, contribute to a nuanced interpretation of generational political preferences.
-            </p>
-          </div>
-        </div>
-
+      <div class="hero-photo fade-in delay-3">
+        <img src="assets/img/profile.jpg" alt="Joan Costa Rodriguez" />
       </div>
-    </section>
-    <hr class="m-0" />
-  </div>
+    </div>
+  </header>
 
-  <!-- Bootstrap + Theme JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/scripts.js"></script>
+  <div class="divider"><hr /></div>
+
+  <!-- Research -->
+  <section id="research">
+    <p class="section-label">Research</p>
+    <h2>Working Papers &amp; Projects</h2>
+
+    <!-- Paper 1: Migration Routes -->
+    <div class="paper-card fade-in">
+      <span class="paper-status status-progress">Work in Progress</span>
+      <h3>
+        <a href="Migration_Routes.pdf" target="_blank">Conflict, Persistence, and Route Switching: Migration Corridor Allocation Under Changing Transit Risk</a>
+      </h3>
+      <p class="paper-meta">Research Proposal · Barcelona School of Economics · April 2026</p>
+      <p class="paper-abstract">
+        This paper studies how conflict along transit corridors reshapes the allocation of East African irregular migration flows toward Europe. Using geocoded UCDP conflict events overlaid on the road network, I construct a continuous, time-varying measure of corridor traversal cost and estimate the persistence-reallocation trade-off across the Eastern and Central Mediterranean routes. The identification exploits three major conflict escalations—the Tigray War (2020), the Sudan civil war (2023), and the Gaza conflict (2023)—which differentially affect the two corridors. Preliminary results show strong corridor persistence and a 16 percentage-point reallocation of route shares following the Sudan war onset.
+      </p>
+      <div class="paper-keywords">
+        <span class="kw">migration corridors</span>
+        <span class="kw">conflict</span>
+        <span class="kw">route choice</span>
+        <span class="kw">persistence</span>
+        <span class="kw">East Africa</span>
+        <span class="kw">discrete choice</span>
+      </div>
+      <div class="paper-links">
+        <a href="Migration_Routes.pdf" target="_blank">PDF</a>
+      </div>
+    </div>
+
+    <!-- Paper 2: Remittances -->
+    <div class="paper-card fade-in">
+      <span class="paper-status status-progress">Work in Progress</span>
+      <h3>
+        <a href="Modelling_Remittances.pdf" target="_blank">Remittance Frictions, Migrant Heterogeneity, and Transfer Behavior</a>
+      </h3>
+      <p class="paper-meta">Research Proposal · Barcelona School of Economics · April 2026</p>
+      <p class="paper-abstract">
+        This paper adapts the heterogeneous-firm trade framework to migrant remittance decisions. Migrants differ in altruism and income, remitting requires paying fixed and variable transfer costs, and only those with sufficiently high net benefit participate. Using SIPP micro data (2019–2024) and World Bank transfer-cost data, I estimate the extensive and intensive margins of remitting and recover an elasticity of substitution close to unity. The framework yields testable predictions on recipient-type selection and enables counterfactuals for cost-reduction and digitalization policies.
+      </p>
+      <div class="paper-keywords">
+        <span class="kw">remittances</span>
+        <span class="kw">transfer costs</span>
+        <span class="kw">Melitz framework</span>
+        <span class="kw">heterogeneous agents</span>
+        <span class="kw">extensive margin</span>
+        <span class="kw">exchange rates</span>
+      </div>
+      <div class="paper-links">
+        <a href="Modelling_Remittances.pdf" target="_blank">PDF</a>
+      </div>
+    </div>
+
+    <!-- Paper 3: Writing Sample -->
+    <div class="paper-card fade-in">
+      <span class="paper-status status-wp">Writing Sample</span>
+      <h3>
+        <a href="Writing_Sample.pdf" target="_blank">Market Access and Regional Inequality: Evidence from Brazil's Capital Relocation</a>
+      </h3>
+      <p class="paper-meta">Master's Thesis · Barcelona School of Economics</p>
+      <p class="paper-abstract">
+        This paper examines the impact of market access on regional inequality using the relocation of Brazil's capital to Brasília as a natural experiment. The capital move triggered a large-scale highway expansion that differentially reduced trade costs across states. I construct market access indices from official data and find that increases in market access are associated with rising inequality in industrial regions, while the effect is significantly attenuated in rural areas.
+      </p>
+      <div class="paper-keywords">
+        <span class="kw">market access</span>
+        <span class="kw">regional inequality</span>
+        <span class="kw">Brazil</span>
+        <span class="kw">infrastructure</span>
+        <span class="kw">trade costs</span>
+      </div>
+      <div class="paper-links">
+        <a href="Writing_Sample.pdf" target="_blank">PDF</a>
+      </div>
+    </div>
+
+    <!-- Paper 4: Ideology -->
+    <div class="paper-card fade-in">
+      <span class="paper-status status-wp">Completed</span>
+      <h3>Ideology and Age: A Perspective Across Multiple Generations in Spain, the United Kingdom, and the United States</h3>
+      <p class="paper-meta">Undergraduate Thesis · Pompeu Fabra University</p>
+      <p class="paper-abstract">
+        This study examines political trends across generations in Spain, comparing them with the United Kingdom and the United States. Using CIS survey data, the research documents an initial leftward lean in younger generations that shifts toward more conservative positions with age, shaped by historical events, economic circumstances, and institutional context.
+      </p>
+      <div class="paper-keywords">
+        <span class="kw">political economy</span>
+        <span class="kw">ideology</span>
+        <span class="kw">generational analysis</span>
+        <span class="kw">Spain</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- Education -->
+  <section id="education">
+    <p class="section-label">Education</p>
+    <h2>Academic Background</h2>
+
+    <div class="edu-item fade-in">
+      <div>
+        <h3>MSc in Economics</h3>
+        <p class="edu-school"><a href="https://bse.eu" target="_blank">Barcelona School of Economics</a></p>
+        <p class="edu-detail">Research focus on Development Economics, Migration, and Inequality</p>
+      </div>
+      <span class="edu-year">2025 – 2026</span>
+    </div>
+
+    <div class="edu-item fade-in">
+      <div>
+        <h3>BSc in Economics</h3>
+        <p class="edu-school"><a href="https://www.upf.edu/en/" target="_blank">Pompeu Fabra University</a>, Barcelona</p>
+        <p class="edu-detail">Top 6% of class · <a href="https://www.upf.edu/web/econ/programa-mqa" target="_blank" style="color:var(--accent);text-decoration:none;">Advanced Quantitative Methods Program</a></p>
+      </div>
+      <span class="edu-year">2020 – 2024</span>
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- Contact -->
+  <section id="contact">
+    <p class="section-label">Contact</p>
+    <h2>Get in Touch</h2>
+    <div class="contact-grid fade-in">
+      <div class="contact-item">
+        <p class="label">Email</p>
+        <a href="mailto:joancostaro6@gmail.com">joancostaro6@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <p class="label">Location</p>
+        <p>Barcelona, Spain</p>
+      </div>
+      <div class="contact-item">
+        <p class="label">Affiliation</p>
+        <p>Barcelona School of Economics</p>
+      </div>
+      <div class="contact-item">
+        <p class="label">CV</p>
+        <a href="CV_Master.pdf">Download CV (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Joan Costa Rodriguez. Barcelona School of Economics.</p>
+  </footer>
+
+  <script>
+    // Nav scroll shadow
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile toggle
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // Close mobile nav on link click
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // Intersection Observer for fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.paper-card.fade-in, .edu-item.fade-in, .contact-grid.fade-in').forEach(el => {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
